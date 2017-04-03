@@ -1,0 +1,13 @@
+
+- Codex: https://commondoc.github.io/codex/docs/tutorial.html
+
+Problems:
+- some  entries don't  have docstrings  and  throw an  error. I  added
+  "missing entry" on slime's debugger.
+- for a lot of functions codex displays "No node with name …".
+
+Get a list of all =defS=:
+
+: cat s-code.lisp | grep -o "(defS .*" | cut -d ' ' -f2
+
+: (m-buffer-match-string-no-properties (m-buffer-match (current-buffer) "^\(defS .*"))

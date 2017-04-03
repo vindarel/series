@@ -1,0 +1,104 @@
+@begin(section)
+@title(Overview)
+
+A series is a data structure much like a sequence, with similar kinds
+of operations. The difference is that in many situations, operations
+on series may be composed functionally and yet execute iteratively,
+without the need to construct intermediate series values
+explicitly. In this manner, series provide both the clarity of a
+functional programming style and the efficiency of an iterative
+programming style.
+
+
+Series is the culmination of many years of design and use of this
+approach, during which some 100,000 lines of application code have
+been written (by about half a dozen people over the course of seven
+years) using the series facility in nearly all iteration
+situations. This includes one large system (KBEmacs) of over 40,000
+lines of code.
+
+
+Series lets you write your program in a functional style without any
+runtime penalty at all ! (@link[uri="http://malisper.me/2016/04/13/loops-in-lisp-part-4-series/"](malisper.me))
+
+
+@cl:with-package[name="series"](
+
+@cl:doc(macro collect)
+@cl:doc(macro funcall)
+@cl:doc(macro multiple-value-bind)
+@cl:doc(macro let)
+@cl:doc(macro let*)
+@cl:doc(macro map-fn)
+@cl:doc(macro encapsulated)
+@cl:doc(macro collect-fn)
+@cl:doc(macro collecting-fn)
+@cl:doc(macro scan-fn)
+@cl:doc(macro scan-fn-inclusive)
+@cl:doc(macro collect-ignore)
+@cl:doc(macro iterate)
+@cl:doc(macro mapping)
+@cl:doc(macro producing)
+@cl:doc(macro alter)
+@cl:doc(macro alter)
+@cl:doc(macro to-alter)
+@cl:doc(macro series)
+@cl:doc(macro literal-series)
+@cl:doc(macro make-series)
+@cl:doc(macro scan-range)
+@cl:doc(macro scan)
+@cl:doc(macro cotruncate)
+@cl:doc(macro scan*)
+@cl:doc(macro scan-multiple)
+@cl:doc(macro scan-sublists)
+@cl:doc(macro scan-alist)
+@cl:doc(macro scan-plist)
+@cl:doc(macro scan-lists-of-lists)
+@cl:doc(macro scan-lists-of-lists-fringe)
+@cl:doc(macro scan-symbols)
+@cl:doc(macro scan-symbols)
+@cl:doc(macro scan-file)
+@cl:doc(macro scan-stream)
+@cl:doc(macro scan-hash)
+@cl:doc(macro previous)
+@cl:doc(macro latch)
+@cl:doc(macro until1)
+@cl:doc(macro until)
+@cl:doc(macro until-if1)
+@cl:doc(macro until-if)
+@cl:doc(macro positions)
+@cl:doc(macro mask)
+@cl:doc(macro choose)
+@cl:doc(macro choose-if)
+@cl:doc(macro expand)
+@cl:doc(macro spread)
+@cl:doc(macro subseries)
+@cl:doc(macro mingle)
+@cl:doc(macro catenate2)
+@cl:doc(macro catenate)
+@cl:doc(macro collect-union)
+@cl:doc(macro split)
+@cl:doc(macro split-if)
+@cl:doc(macro every-nth)
+@cl:doc(macro chunk)
+@cl:doc(macro collect-append)
+@cl:doc(macro collect-nconc)
+@cl:doc(macro collect-hash)
+@cl:doc(macro collect-file)
+@cl:doc(macro collect-stream)
+@cl:doc(macro collect-alist)
+@cl:doc(macro collect-plist)
+@cl:doc(macro collect-last)
+@cl:doc(macro collect-first)
+@cl:doc(macro collect-nth)
+@cl:doc(macro collect-and)
+@cl:doc(macro collect-or)
+@cl:doc(macro collect-length)
+@cl:doc(macro collect-sum)
+@cl:doc(macro collect-product)
+@cl:doc(macro collect-max)
+@cl:doc(macro collect-min)
+
+)
+
+@end(section)
