@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+  Overview &ndash; Series
+</title>
+    <link rel="stylesheet" href="static/style.css"/>
+    
+  <link rel="stylesheet" href="static/highlight.css"/>
+  <script src="static/highlight.js"></script>
+  <style>
+   /* Highlight the current top-level TOC item, and hide the TOC of all other items */
+
+   .toc a[data-node="overview"] {
+       color: #AD3108;
+   }
+
+   .toc ol {
+       display: none;
+   }
+
+   .toc > ol {
+       display: block;
+   }
+
+   .toc li a[data-node="overview"] + ol {
+       display: block;
+   }
+
+   .toc li a[data-node="overview"] + ol li {
+       font-size: 16px;
+       margin: 0 10px;
+   }
+
+   .toc li a[active] + ol li:first-child {
+       margin-top: 5px;
+   }
+  </style>
+
+  </head>
+  <body>
+    
+  <h1 class="doc-title">Series  Overview</h1>
+  <article id="article" data-section="overview">
+    <aside>
+      <ol class="toc"><li><a href="overview.html" data-node="overview">Overview</a></li></ol>
+    </aside>
+    <main class="codex-section">
+      <p>A series is a data structure much like a sequence, with similar kinds
+of operations. The difference is that in many situations, operations
+on series may be composed functionally and yet execute iteratively,
+without the need to construct intermediate series values
+explicitly. In this manner, series provide both the clarity of a
+functional programming style and the efficiency of an iterative
+programming style.</p><p>
+Series is the culmination of many years of design and use of this
+approach, during which some 100,000 lines of application code have
+been written (by about half a dozen people over the course of seven
+years) using the series facility in nearly all iteration
+situations. This includes one large system (KBEmacs) of over 40,000
+lines of code.</p><p>
+Series lets you write your program in a functional style without any
+runtime penalty at all ! (<a href="http://malisper.me/2016/04/13/loops-in-lisp-part-4-series/">malisper.me</a>)</p><p>
+<p><div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect [type] series)</p><p>Creates a sequence containing the elements of SERIES.  The TYPE
+argument specifies the type of sequence to be created.  This type must
+be a proper subtype of sequence.  If omitted, TYPE defaults to LIST. </p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">funcall</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">missing docstring</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">multiple-value-bind</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">missing docstring</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">let</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">missing docstring</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">let*</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"></div></div>
+<div class="codex-error codex-no-node">No node with name <code>map-fn</code>.</div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">encapsulated</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">Specifies an encapsulating form to be used with a scanner or collector.</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-fn</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-fn type init-function function &amp;rest args)</p><p>Computes a cumulative value by applying FUNCTION to the elements of ITEMS.
+INIT-FUNCTION specifies the initial value(s).  Like COLLECTING-FN, but
+only the last element of each series is returned.</p></div></div>
+<div class="codex-error codex-no-node">No node with name <code>collecting-fn</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-fn</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-fn-inclusive</code>.</div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-ignore</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-ignore series)</p><p>Like COLLECT, but any output that would have been returned is
+discarded.  In particular, no results are consed at all.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">iterate</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(iterate ({({var | ({var}*)} value)}*) {declaration}* {form}*)</p><p>Applies BODY to each element of the series, like MAPPING, but results
+are discarded.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">mapping</code><code class="codex-lambda-list">(&amp;rest stuff)</code><div class="codex-docstring">missing docstring</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">producing</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">missing docstring</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">alter</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">Alters the values in DESTINATIONS to be ITEMS.</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">alter</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">Alters the values in DESTINATIONS to be ITEMS.</div></div>
+<div class="codex-error codex-no-node">No node with name <code>to-alter</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>series</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>literal-series</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>make-series</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-range</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-range</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>cotruncate</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan*</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-multiple</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-sublists</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-alist</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-plist</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-lists-of-lists</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-lists-of-lists-fringe</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-symbols</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-symbols</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-file</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-stream</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>scan-hash</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>previous</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>latch</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>until1</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>until</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>until-if1</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>until-if</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>positions</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>mask</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>choose</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>choose-if</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>expand</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>spread</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>subseries</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>mingle</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>catenate2</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>catenate</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>collect-union</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>split</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>split-if</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>every-nth</code>.</div>
+<div class="codex-error codex-no-node">No node with name <code>chunk</code>.</div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-append</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-append [type] items)</p><p>Given a series of sequences, COLLECT-APPEND returns a new sequence by
+concatenating these sequences together in order.  The TYPE is a type
+specifier indicating the type of sequence created and must be a proper
+subtype of SEQUENCE.  If TYPE is omitted, it defaults to LIST.  For
+example:</p><p>  (COLLECT-APPEND #Z((A B) NIL (C D))) =&gt; (A B C D)</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-nconc</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-nconc items)</p><p>COLLECT-NCONC NCONCs the elements of the series LISTS together in
+order and returns the result.  This is the same as COLLECT-APPEND
+except that the input must be a series of lists, the output is always
+a list, the concatenation is done rapidly by destructively modifying
+the input elements, and therefore the output shares all of its
+structure with the input elements.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-hash</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-hash keys values :test :size :rehash-size :rehash-threshold)</p><p>Combines a series of keys and a series of values together into a hash
+table.  The keyword arguments specify the attributes of the hash table
+to be produced.  They are used as arguments to MAKE-HASH-TABLE</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-file</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">missing docstring</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-stream</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">Prints the elements of ITEMS onto the stream NAME.</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-alist</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-alist keys values)</p><p>Combines a series of keys and a series of values together into an alist.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-plist</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-plist indicators values)</p><p>Combines a series of indicators and a series of values together into a plist.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-last</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-last items &amp;optional (default nil))</p><p>Returns the last element of the series ITEMS.  If ITEMS has no
+elements, DEFAULT is returned.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-first</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-first items &amp;optional (default nil))</p><p>Returns the first element of the series ITEMS.  If ITEMS has no
+elements, DEFAULT is returned.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-nth</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-nth n items &amp;optional (default nil))</p><p>Returns the Nth element of the series ITEMS.  If ITEMS has no Nth
+element, DEFAULT is returned.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-and</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-and bools)</p><p>Computes the AND of the elements of BOOLS.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-or</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-or bools)</p><p>Computes the OR of the elements of BOOLS.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-length</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring">(collect-length items)
+Returns the number of elements in ITEMS.</div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-sum</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-sum numbers &amp;optional (type 'number))</p><p>Computes the sum of the elements in NUMBERS.  TYPE specifies the
+type of sum to be created.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-product</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-product numbers &amp;optional (type 'number))</p><p>Computes the product of the elements in NUMBERS.  TYPE specifies the
+type of product to be created.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-max</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-max numbers &amp;optional (items numbers items-p)(default nil))</p><p>Returns the element of ITEMS that corresponds to the maximum element
+of NUMBERS.  If ITEMS is omitted, then the maximum of NUMBERS itself
+is returned.  The value DEFAULT is returned if either NUMBERS or ITEMS
+has zero length.</p></div></div>
+<div class="codex-doc-node codex-operator codex-macro"><code class="codex-name">collect-min</code><code class="codex-lambda-list">(&amp;whole call &amp;rest stuff &amp;environment *env*)</code><div class="codex-docstring"><p>(collect-min numbers &amp;optional (items numbers items-p)(default nil))</p><p>Returns the element of ITEMS that corresponds to the minimum element
+of NUMBERS.  If ITEMS is omitted, then the minimum of NUMBERS itself
+is returned.  The value DEFAULT is returned if either NUMBERS or ITEMS
+has zero length.</p></div></div></p></p>
+    </main>
+  </article>
+  <footer>
+    <div class="info">
+      Created with <a href="https://github.com/CommonDoc/codex">Codex</a>.
+    </div>
+  </footer>
+  <script>
+   HighlightLisp.highlight_auto();
+  </script>
+
+  </body>
+</html>
